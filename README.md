@@ -1,73 +1,120 @@
-# Minimal Template
+# Digital Reset 🧘‍♂️
 
-This is a [React Native](https://reactnative.dev/) project built with [Expo](https://expo.dev/) and [React Native Reusables](https://reactnativereusables.com).
+30 günlük dijital detoks yolculuğunuz için tasarlanmış mobil uygulama. Günlük temizlik görevleri ve sağlıklı dijital alışkanlıklar oluşturmanıza yardımcı olur.
 
-It was initialized using the following command:
+## 📱 Ekran Görüntüleri
+
+| Ana Sayfa | Timeline | İstatistikler |
+|-----------|----------|---------------|
+| Günlük görevler | 30 günlük yolculuk | İlerleme takibi |
+
+## ✨ Özellikler
+
+- 📅 **30 Günlük Program** - Kişiselleştirilmiş dijital temizlik planı
+- ✅ **Günlük Görevler** - Fotoğraf silme, uygulama kaldırma, takipten çıkma
+- 🔥 **Seri Takibi** - Motivasyonunuzu artıran streak sistemi
+- 📊 **İstatistikler** - İlerlemenizi görsel olarak takip edin
+- 🌍 **Çoklu Dil** - Türkçe ve İngilizce desteği
+- 🎨 **Modern UI** - Minimal ve şık tasarım
+
+## 🛠️ Teknolojiler
+
+- **Framework**: [Expo](https://expo.dev/) (SDK 54)
+- **Router**: [Expo Router](https://expo.dev/router) v6
+- **Styling**: [NativeWind](https://www.nativewind.dev/) (Tailwind CSS)
+- **Animations**: [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
+- **Icons**: [Lucide React Native](https://lucide.dev/)
+- **State**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **i18n**: [i18n-js](https://github.com/fnando/i18n-js)
+
+## 🚀 Başlangıç
+
+### Gereksinimler
+
+- Node.js 18+
+- npm veya yarn
+- Expo Go uygulaması (fiziksel cihaz için)
+
+### Kurulum
 
 ```bash
-npx @react-native-reusables/cli@latest init -t digitalreset
+# Bağımlılıkları yükle
+npm install
+
+# Geliştirme sunucusunu başlat
+npm run dev
 ```
 
-## Getting Started
-
-To run the development server:
+### Çalıştırma
 
 ```bash
-    npm run dev
-    # or
-    yarn dev
-    # or
-    pnpm dev
-    # or
-    bun dev
+# iOS Simulator
+npm run ios
+
+# Android Emulator
+npm run android
+
+# Web
+npm run web
 ```
 
-This will start the Expo Dev Server. Open the app in:
+## 📁 Proje Yapısı
 
-- **iOS**: press `i` to launch in the iOS simulator _(Mac only)_
-- **Android**: press `a` to launch in the Android emulator
-- **Web**: press `w` to run in a browser
+```
+digitalreset/
+├── app/                    # Expo Router sayfaları
+│   ├── (tabs)/             # Tab navigasyonu
+│   │   ├── index.tsx       # Ana sayfa
+│   │   ├── timeline.tsx    # 30 günlük timeline
+│   │   └── stats.tsx       # İstatistikler
+│   ├── onboarding/         # Onboarding akışı
+│   ├── settings.tsx        # Ayarlar
+│   └── paywall.tsx         # Premium ekranı
+├── components/             # Yeniden kullanılabilir bileşenler
+├── context/                # React Context'ler
+│   └── LanguageContext.tsx # Dil yönetimi
+├── lib/
+│   ├── i18n/               # Çeviri dosyaları
+│   │   ├── tr.ts           # Türkçe
+│   │   └── en.ts           # İngilizce
+│   └── utils.ts            # Yardımcı fonksiyonlar
+└── assets/                 # Görsel ve ses dosyaları
+```
 
-You can also scan the QR code using the [Expo Go](https://expo.dev/go) app on your device. This project fully supports running in Expo Go for quick testing on physical devices.
+## 🌐 Çoklu Dil Desteği
 
-## Adding components
+Uygulama Türkçe ve İngilizce destekler. Yeni dil eklemek için:
 
-You can add more reusable components using the CLI:
+1. `lib/i18n/` klasörüne yeni dil dosyası ekleyin (örn: `de.ts`)
+2. `lib/i18n/index.ts` dosyasında dili kaydedin
+3. `LanguageContext.tsx`'te dil listesine ekleyin
+
+## 📦 Deploy
+
+### EAS Build
 
 ```bash
-npx react-native-reusables/cli@latest add [...components]
+# iOS build
+eas build --platform ios
+
+# Android build
+eas build --platform android
 ```
 
-> e.g. `npx react-native-reusables/cli@latest add input textarea`
+### EAS Submit
 
-If you don't specify any component names, you'll be prompted to select which components to add interactively. Use the `--all` flag to install all available components at once.
+```bash
+# App Store'a gönder
+eas submit --platform ios
 
-## Project Features
+# Play Store'a gönder
+eas submit --platform android
+```
 
-- ⚛️ Built with [Expo Router](https://expo.dev/router)
-- 🎨 Styled with [Tailwind CSS](https://tailwindcss.com/) via [Nativewind](https://www.nativewind.dev/)
-- 📦 UI powered by [React Native Reusables](https://github.com/founded-labs/react-native-reusables)
-- 🚀 New Architecture enabled
-- 🔥 Edge to Edge enabled
-- 📱 Runs on iOS, Android, and Web
+## 📄 Lisans
 
-## Learn More
-
-To dive deeper into the technologies used:
-
-- [React Native Docs](https://reactnative.dev/docs/getting-started)
-- [Expo Docs](https://docs.expo.dev/)
-- [Nativewind Docs](https://www.nativewind.dev/)
-- [React Native Reusables](https://reactnativereusables.com)
-
-## Deploy with EAS
-
-The easiest way to deploy your app is with [Expo Application Services (EAS)](https://expo.dev/eas).
-
-- [EAS Build](https://docs.expo.dev/build/introduction/)
-- [EAS Updates](https://docs.expo.dev/eas-update/introduction/)
-- [EAS Submit](https://docs.expo.dev/submit/introduction/)
+Bu proje özel kullanım içindir.
 
 ---
 
-If you enjoy using React Native Reusables, please consider giving it a ⭐ on [GitHub](https://github.com/founded-labs/react-native-reusables). Your support means a lot!
+Made with ❤️ using Expo
